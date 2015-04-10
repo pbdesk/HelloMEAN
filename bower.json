@@ -17,9 +17,6 @@
     "test",
     "tests"
   ],
-  "install": {
-    "path": "public/bower"
-  },
   "dependencies": {
     "jquery": "~2.1.3",
     "toastr": "~2.1.1",
