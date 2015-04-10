@@ -24,7 +24,7 @@ html(lang='en')
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
-                    a.navbar-brand(href='#') Project name
+                    a.navbar-brand(href='#') PBDesk
                 #navbar.collapse.navbar-collapse
                     ul.nav.navbar-nav
                         li.active
@@ -42,9 +42,11 @@ html(lang='en')
                     p.pull-right.visible-xs
                         button.btn.btn-primary.btn-xs(type='button', data-toggle='offcanvas') Toggle nav
                     .jumbotron
-                        h1 {{vm.title}}
-                        p
-                            | This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.
+                        h1 HelloMEAN
+                        p {{vm.title}}
+                        p= data
+                        P my first MEAN app
+
                     .row
                         .col-xs-6.col-lg-4
                             h2 Heading

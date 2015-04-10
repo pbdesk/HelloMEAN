@@ -15,15 +15,25 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
-app.get('*', function(req, res){
-    res.render('index');
-});
-
 mongoose.connect('mongodb://localhost/HelloMEAN');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB Connection error...'));
 db.once('open', function callback(){
     console.log('MongoDB database connection opened for HelloMEAN db collection');
 });
+
+var messageSchema = mongoose.Schema({message: String});
+var Message = mongoose.model('Message', messageSchema);
+var dataFromMongao;
+Message.findOne().exec(function(err, msgDoc){
+    dataFromMongao = msgDoc.message;
+});
+
+
+
+app.get('*', function(req, res){
+    res.render('index', {data: dataFromMongao});
+});
+
 
 module.exports = app;
