@@ -1,0 +1,23 @@
+{
+  "name": "HelloMEAN",
+  "version": "1.0.0",
+  "description": "My First MEAN Project for scratch",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pbdesk/HelloMEAN.git"
+  },
+  "keywords": [
+    "MEAN",
+    "PBDesk"
+  ],
+  "author": "Pinal Bhatt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pbdesk/HelloMEAN/issues"
+  },
+  "homepage": "https://github.com/pbdesk/HelloMEAN"
+}
