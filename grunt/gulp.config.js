@@ -2,7 +2,8 @@ module.exports = function() {
     var gulpConfig = {
         alljs:[
             './*.js',
-            './server/**/*.js'
+            './server/**/*.js',
+            './grunt/**/*.js'
         ],
         bowerComponentsLoc: './bower_components/',
         publicBowerLoc: './public/bower/',
