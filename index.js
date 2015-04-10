@@ -24,6 +24,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.log('Your http server is ready');
 
 /**
  * Normalize a port into a number, string, or false.
