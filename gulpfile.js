@@ -34,5 +34,5 @@ gulp.task('vet', function() {
 });
 
 gulp.task('copyFromBower', ['cleanPublicBower', 'copyJQuery', 'copyBootstrap',
-    'copyFontawesomeCSS', 'copyFontawesomeFONTS', 'copyToastr']);
+    'copyFontawesomeCSS', 'copyFontawesomeFONTS', 'copyToastr', 'copyAngularCore']);
 

@@ -30,6 +30,15 @@ module.exports = function() {
             fontawesomeFONTS: {
                 source: './bower_components/fontawesome/fonts/*.*',
                 dest: './public/bower/fontawesome/fonts/'
+            },
+            angularCore: {
+                source: [
+                    './bower_components/angular/angular.js',
+                    './bower_components/angular/angular.min.js',
+                    './bower_components/angular/angular.min.js.map',
+                    './bower_components/angular/angular-csp.css'
+                ],
+                dest: './public/bower/angular/'
             }
         }
     };

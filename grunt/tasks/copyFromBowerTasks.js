@@ -40,3 +40,8 @@ gulp.task('copyToastr', function(){
     gulpUtils.log('Copy toastr from bower_components to public/bower');
     return gulpUtils.copyFiles(gulpUtils.config.bower.toastr.source, gulpUtils.config.bower.toastr.dest);
 });
+
+gulp.task('copyAngularCore', function(){
+    gulpUtils.log('Copy angular from bower_components to public/bower');
+    return gulpUtils.copyFiles(gulpUtils.config.bower.angularCore.source, gulpUtils.config.bower.angularCore.dest);
+});
