@@ -4,7 +4,8 @@ module.exports = function() {
             './*.js',
             './server/**/*.js'
         ],
-        bowerComponentsLoc: 'bower_components',
+        bowerComponentsLoc: './bower_components/',
+        publicBowerLoc: './public/bower/',
         bower: {
             jquery: {
                 source: './bower_components/jquery/dist/*.*',
@@ -21,12 +22,13 @@ module.exports = function() {
                     ],
                 dest: './public/bower/toastr/'
             },
-            fontawesome: {
-                source: [
-                    './bower_components/fontawesome/css/*.css',
-                    './bower_components/fontawesome/fonts/*.*'
-                ],
-                dest: './public/bower/toastr/'
+            fontawesomeCSS: {
+                source: './bower_components/fontawesome/css/*.css',
+                dest: './public/bower/fontawesome/'
+            },
+            fontawesomeFONTS: {
+                source: './bower_components/fontawesome/fonts/*.*',
+                dest: './public/bower/fontawesome/fonts/'
             }
         }
     };

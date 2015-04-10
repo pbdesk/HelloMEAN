@@ -5,11 +5,14 @@ var G = require('gulp-load-plugins')({lazy:true});
 
 var gulpConfig = require('./gulp.config')();
 
-/*var jshint = require('gulp-jshint');
+/*
+var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var util = require('gulp-util');
 var gulpprint = require('gulp-print');
-var gulpif = require('gulp-if');*/
+var gulpif = require('gulp-if');
+var clean = require('gulp-clean');
+*/
 
 gulp.task('hello-gulp', function() {
     console.log('Hello Gulp - from my first MEAN Project HelloMEAN');
@@ -26,50 +29,46 @@ gulp.task('vet', function() {
         .pipe(G.jshint.reporter('fail'));
 });
 
-gulp.task('copyFromBower', function(){
-    log('Copy static assets from bower_components to public/bower');
+gulp.task('cleanPublicBower', function(){
     return gulp
-        .src(gulpConfig.bower.jquery.source)
-        .pipe(gulp.dest(gulpConfig.bower.jquery.dest));
+        .src(gulpConfig.publicBowerLoc, {read: false})
+        .pipe(G.clean());
 });
 
+gulp.task('copyFromBower', ['cleanPublicBower', 'copyJQuery', 'copyBootstrap',
+    'copyFontawesomeCSS', 'copyFontawesomeFONTS', 'copyToastr']);
+
 gulp.task('copyJQuery', function(){
-    log('Copy jquery from bower_components to public/bower');
-    return gulp
-        .src(gulpConfig.bower.jquery.source)
-        .pipe(gulp.dest(gulpConfig.bower.jquery.dest));
-});
-gulp.task('copyJQuery1', function(){
     log('Copy jquery from bower_components to public/bower');
     return copyFiles(gulpConfig.bower.jquery.source, gulpConfig.bower.jquery.dest);
 });
 
 gulp.task('copyBootstrap', function(){
     log('Copy bootstrap from bower_components to public/bower');
-    return gulp
-        .src(gulpConfig.bower.bootstrap.source)
-        .pipe(gulp.dest(gulpConfig.bower.bootstrap.dest));
+    return copyFiles(gulpConfig.bower.bootstrap.source, gulpConfig.bower.bootstrap.dest);
 });
 
 gulp.task('copyBootswatch', function(){
-    log('Copy bootswatch from bower_components to public/bower');
-    return gulp
-        .src(gulpConfig.bower.bootstrap.source)
-        .pipe(gulp.dest(gulpConfig.bower.bootstrap.dest));
+    var theme = 'paper';
+    if(args.theme){
+        theme = args.theme;
+    }
+    log('Copy bootswatch from bower_components to public/bower theme: ' + theme);
+    return copyFiles('./bower_components/bootswatch/' + theme + '/*.css', gulpConfig.bower.bootstrap.dest + 'css/');
 });
 
-gulp.task('copyFontawesome', function(){
+gulp.task('copyFontawesomeCSS', function(){
     log('Copy fontawesome from bower_components to public/bower');
-    return gulp
-        .src(gulpConfig.bower.fontawesome.source)
-        .pipe(gulp.dest(gulpConfig.bower.fontawesome.dest));
+    return copyFiles(gulpConfig.bower.fontawesomeCSS.source, gulpConfig.bower.fontawesomeCSS.dest);
+});
+gulp.task('copyFontawesomeFONTS', function(){
+    log('Copy fontawesome from bower_components to public/bower');
+    return copyFiles(gulpConfig.bower.fontawesomeFONTS.source, gulpConfig.bower.fontawesomeFONTS.dest);
 });
 
 gulp.task('copyToastr', function(){
     log('Copy toastr from bower_components to public/bower');
-    return gulp
-        .src(gulpConfig.bower.toastr.source)
-        .pipe(gulp.dest(gulpConfig.bower.toastr.dest));
+    return copyFiles(gulpConfig.bower.toastr.source, gulpConfig.bower.toastr.dest);
 });
 
 ///// Supporting Functions
