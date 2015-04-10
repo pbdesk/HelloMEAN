@@ -1,0 +1,21 @@
+{
+  "name": "HelloMEAN",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pbdesk/HelloMEAN",
+  "authors": [
+    "Pinal Bhatt<PinalBhatt@gmail.com>"
+  ],
+  "description": "My First MEAN Project - Bower",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower",
+    "test",
+    "tests"
+  ]
+}
