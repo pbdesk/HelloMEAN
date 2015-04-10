@@ -2,6 +2,10 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var util = require('gulp-util');
+var gulpprint = require('gulp-print');
+var gulpif = require('gulp-if');
+
+var args = require('yargs').argv;
 
 gulp.task('hello-gulp', function() {
     console.log('Hello Gulp - from my first MEAN Project HelloMEAN');
@@ -14,7 +18,8 @@ gulp.task('vet', function() {
             './*.js',
             './server/**/*.js'
         ])
-        //.pipe(jscs())
+        .pipe(gulpif(args.verbose, gulpprint()))
+        .pipe(jscs())
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish', {verbose:true}))
         .pipe(jshint.reporter('fail'));

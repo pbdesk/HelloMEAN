@@ -26,7 +26,7 @@
     "disallowSpaceAfterPrefixUnaryOperators": true,
     "disallowMultipleVarDecl": null,
 
-    "requireSpaceAfterKeywords": [
+    /*"requireSpaceAfterKeywords": [
       "if",
       "else",
       "for",
@@ -36,7 +36,7 @@
       "return",
       "try",
       "catch"
-    ],
+    ],*/
     "requireSpaceBeforeBinaryOperators": [
         "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
         "&=", "|=", "^=", "+=",
@@ -47,7 +47,7 @@
     ],
     "requireSpaceAfterBinaryOperators": true,
     "requireSpacesInConditionalExpression": true,
-    "requireSpaceBeforeBlockStatements": true,
+    //"requireSpaceBeforeBlockStatements": true,
     "requireLineFeedAtFileEnd": true,
     "disallowSpacesInsideObjectBrackets": "all",
     "disallowSpacesInsideArrayBrackets": "all",
