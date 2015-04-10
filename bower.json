@@ -18,7 +18,7 @@
     "tests"
   ],
   "install": {
-    "path" : "public/bower"
+    "path": "public/bower"
   },
   "dependencies": {
     "jquery": "~2.1.3",
